@@ -41,7 +41,7 @@ function displayUserObject(userObject){
 }
 
 
-/* OPTIONAL PRACTICE: If you want more practice later, look into how to dynamically upddate, add, and remove
+/* OPTIONAL PRACTICE: If you want more practice later, look into how to dynamically update, add, and remove
     attributes of an object in JavaScript. */
 
 module.exports = {
