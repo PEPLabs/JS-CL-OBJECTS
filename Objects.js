@@ -1,6 +1,6 @@
 
 let content = document.getElementById("content");
-user = returnUserObject("user1", "password123");
+const user = returnUserObject("user1", "password123");
 
 displayUserObject(user);
 
