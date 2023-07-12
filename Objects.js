@@ -1,6 +1,5 @@
-
 let content = document.getElementById("content");
-user = returnUserObject("user1", "password123");
+const user = returnUserObject("user1", "password123");
 
 displayUserObject(user);
 
@@ -34,10 +33,13 @@ function returnUserObject(inputUsername, inputPassword){
  * @param userObject a user object.
  */
 function displayUserObject(userObject){
-    content.innerText = `username: ${userObject.username} 
-                        password: ${userObject.password}`;
+    if(content !== null){
+        content.innerText = `username: ${userObject.username} 
+                            password: ${userObject.password}`;
+    }
 }
 
 
-/* OPTIONAL PRACTICE: If you want more practice later, look into how to dynamically upddate, add, and remove
+/* OPTIONAL PRACTICE: If you want more practice later, look into how to dynamically update, add, and remove
     attributes of an object in JavaScript. */
+
