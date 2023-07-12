@@ -1,4 +1,3 @@
-
 let content = document.getElementById("content");
 const user = returnUserObject("user1", "password123");
 
@@ -44,7 +43,3 @@ function displayUserObject(userObject){
 /* OPTIONAL PRACTICE: If you want more practice later, look into how to dynamically update, add, and remove
     attributes of an object in JavaScript. */
 
-module.exports = {
-    user: user,
-    returnUserObject: returnUserObject
-}
