@@ -278,7 +278,7 @@ public class SeleniumTest {
             }
         }
         
-        throw new RuntimeException("Could not find Attributes.html in any expected location: " + 
+        throw new RuntimeException("Could not find Objects.html in any expected location: " + 
             Arrays.toString(possibleHtmlPaths));
     }
     
@@ -551,91 +551,7 @@ public class SeleniumTest {
             this.binaryPath = binaryPath;
         }
     }
-
-    @Test
-    public void testImageSrc() {
-        //setup
-        WebElement imageElement = webDriver.findElement(By.id("image"));
-        WebElement buttonElement = webDriver.findElement(By.id("button"));
-        WebElement inputElement = webDriver.findElement(By.id("input"));
-        String url = "./resources/python.png";
-        String placeholder = "./resources/placeholder.png";
-
-        //make sure initial src is present
-        String initial = imageElement.getAttribute("src");
-        Assert.assertEquals(placeholder.substring(placeholder.length() - 26), initial.substring(initial.length() - 26));
-
-        //enter new input and click button
-        inputElement.sendKeys(url);
-        buttonElement.click();
-        String src = imageElement.getAttribute("src");
-
-        //assert src attribute now matches input
-        Assert.assertEquals(url.substring(1), src.substring(src.length() + 1 - url.length()));
-    }
-
-    @Test
-    public void addOneItemTest() {
-        // find input element:
-        WebElement input = webDriver.findElement(By.id("input"));
-
-        // type in input box:
-        input.sendKeys("apples");
-
-        // find submit button and submit:
-        WebElement button = webDriver.findElement(By.id("button"));
-        button.click();
-
-        // find list of items and ensure item is there:
-        List<WebElement> list = webDriver.findElements(By.cssSelector("#list li"));
-
-        Assert.assertEquals(1, list.size());
-
-        Assert.assertEquals("apples", list.get(0).getText());
-    }
-
-    @Test
-    public void addThreeItemsTest() {
-        // find input element:
-        WebElement input = webDriver.findElement(By.id("input"));
-
-        // type in input box:
-        input.sendKeys("apples");
-
-        // find submit button and submit:
-        WebElement button = webDriver.findElement(By.id("button"));
-        button.click();
-
-        // send more items:
-        input.clear();
-        input.sendKeys("bananas");
-        button.click();
-        input.clear();
-        input.sendKeys("oranges");
-        button.click();
-
-        // find list of items and ensure items are there:
-        List<WebElement> list = webDriver.findElements(By.cssSelector("#list li"));
-
-        Assert.assertEquals(3, list.size());
-
-        Assert.assertEquals("apples", list.get(0).getText());
-        Assert.assertEquals("bananas", list.get(1).getText());
-        Assert.assertEquals("oranges", list.get(2).getText());
-    }
-
-    @Test
-    public void emptyListTest() {
-        // find input element:
-        WebElement input = webDriver.findElement(By.id("input"));
-
-        // find list of items and ensure no items:
-        List<WebElement> list = webDriver.findElements(By.cssSelector("#list li"));
-
-        Assert.assertEquals(0, list.size());
-
-    }
-
+    
     @Test
     public void testPageText() throws InterruptedException {
         WebElement content = webDriver.findElement(By.id("content"));
