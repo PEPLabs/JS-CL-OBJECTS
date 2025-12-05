@@ -1,0 +1,15 @@
+{
+  "type": "java",
+  "testFiles": [
+    {
+      "path": "src/test/java/SeleniumTest.java",
+      "testCases": [
+        {
+          "methodName": "testPageText",
+          "label": "Verify that the page displays the correct user credentials",
+          "description": "Checks that the HTML element with id 'content' contains the expected username and password text."
+        }
+      ]
+    }
+  ]
+}
